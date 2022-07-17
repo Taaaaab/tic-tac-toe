@@ -1,40 +1,11 @@
 const container = document.querySelector('#container');
-const gameBox = document.querySelector('#gameBox');
-
-const gameBoard = () => {
-    let myArray = [];
-
-        gameBox.textContent = myArray;
-};
-gameBoard();
-
-
-const Player = (name, team) => {
-    const getTeam = () => team;
-    const getName  = () => name;
-    const win = () => {
-        console.log('You Win!');
-    }
-    const score = score => {
-        score += 1;
-        if (score >= 3) {
-          win();
-        }
-      };
-    
-    const attack = enemy => {
-      if (getTeam < enemy.getTeam()) {
-        score(1);
-        console.log(`${enemy.getName()} has damaged ${name}`);
-      }
-      if (attack >= enemy.getTeam()) {
-        enemy.score(1);
-        console.log(`${name} has damaged ${enemy.getName()}`);
-      }
-    };
-    return {attack, score, getTeam, getName};
-  };
-  
-  const playerO = Player('jim', 10);
-  const playerX = Player('jeff', 5);
-  playerO.attack(playerX);
+const gridContainer = document.querySelector('#gridContainer');
+const box1 = document.querySelector('#box1');
+const box2 = document.querySelector('#box2');
+const box3 = document.querySelector('#box3');
+const box4 = document.querySelector('#box4');
+const box5 = document.querySelector('#box5');
+const box6 = document.querySelector('#box6');
+const box7 = document.querySelector('#box7');
+const box8 = document.querySelector('#box8');
+const box9 = document.querySelector('#box9');
