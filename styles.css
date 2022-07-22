@@ -52,6 +52,19 @@ html, body {
   align-items: center;
 }
 
+.newGameBtn {
+  display: grid;
+  place-content: center;
+  border-radius: 10px;
+  border: none;
+  height: 50px;
+  margin: 1rem;
+  font-weight: bold;
+  font-size: .9rem;
+  background-color: lightgreen;
+  color: black;
+}
+
 .footer {
     grid-row: 3 / 4;
 
