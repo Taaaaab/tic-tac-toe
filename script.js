@@ -22,6 +22,73 @@ const gameBoard = () => {
       box7.textContent = `${boardArray[6]}`;
       box8.textContent = `${boardArray[7]}`;
       box9.textContent = `${boardArray[8]}`;
+      
+      const playerSelection = (playerO, playerX) => {
+        box1.addEventListener('click', () => {
+          if (playerO.getTeam === 'teamO' && boardArray[0] === '') {
+            boardArray = ['O','','','','','','','','',];
+            box1.textContent = `${boardArray[0]}`;
+          } else;
+        });
+        box2.addEventListener('click', () => {
+          if (boardArray[1] === '') {
+            boardArray = ['','O','','','','','','','',];
+            box2.textContent = `${boardArray[1]}`;
+          } else;
+        });
+        box3.addEventListener('click', () => {
+          if (boardArray[2] === '') {
+            boardArray = ['','','O','','','','','','',];
+            box3.textContent = `${boardArray[2]}`;
+          } else;
+        });
+        box4.addEventListener('click', () => {
+          if (boardArray[3] === '') {
+            boardArray = ['','','','O','','','','','',];
+            box4.textContent = `${boardArray[3]}`;
+          } else;
+        });
+        box5.addEventListener('click', () => {
+          if (boardArray[4] === '') {
+            boardArray = ['','','','','O','','','','',];
+            box5.textContent = `${boardArray[4]}`;
+          } else;
+        });
+        box6.addEventListener('click', () => {
+          if (boardArray[5] === '') {
+            boardArray = ['','','','','','O','','','',];
+            box6.textContent = `${boardArray[5]}`;
+          } else;
+        });
+        box7.addEventListener('click', () => {
+          if (boardArray[6] === '') {
+            boardArray = ['','','','','','','O','','',];
+            box7.textContent = `${boardArray[6]}`;
+          } else;
+        });
+        box8.addEventListener('click', () => {
+          if (boardArray[7] === '') {
+            boardArray = ['','','','','','','','O','',];
+            box8.textContent = `${boardArray[7]}`;
+          } else;
+        });
+        box9.addEventListener('click', () => {
+          if (boardArray[8] === '') {
+            boardArray = ['','','','','','','','','O',];
+            box9.textContent = `${boardArray[8]}`;
+          } else;
+        });
+      };
+      
+      const player = (name, team) => {
+        const getName = name;
+        const getTeam = team;
+      };
+        
+      const playerO = player('Owen', 'teamO');
+      const playerX = player('Dougie', 'teamX');
+        
+  playerSelection(playerO, playerX);
 
   const gameBoardReset = (boardArray) => {
     boardArray = ['','','','','','','','','',];
@@ -45,7 +112,4 @@ const gameBoard = () => {
 };
 gameBoard();
 
-const player = (name, team) => {
-
-};
 
