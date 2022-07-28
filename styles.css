@@ -52,6 +52,30 @@ html, body {
   align-items: center;
 }
 
+#box1,
+#box2,
+#box3 {
+  border-top: solid 0;
+}
+
+#box7,
+#box8,
+#box9 {
+  border-bottom: solid 0;
+}
+
+#box1,
+#box4,
+#box7 {
+  border-left: solid 0;
+}
+
+#box3,
+#box6,
+#box9 {
+  border-right: solid 0;
+}
+
 .newGameBtn {
   display: grid;
   place-content: center;
