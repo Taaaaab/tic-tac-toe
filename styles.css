@@ -76,6 +76,11 @@ html, body {
   border-right: solid 0;
 }
 
+.win-message {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 .newGameBtn {
   display: grid;
   place-content: center;

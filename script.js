@@ -9,6 +9,7 @@ const box6 = document.querySelector('#box6');
 const box7 = document.querySelector('#box7');
 const box8 = document.querySelector('#box8');
 const box9 = document.querySelector('#box9');
+const winMessage = document.querySelector('#winMessage');
 const newGameBtn = document.querySelector('#newGameBtn');
 let boardArray = ['','','','','','','','',''];
 
@@ -23,7 +24,7 @@ const gameBoard = () => {
       box8.textContent = `${boardArray[7]}`;
       box9.textContent = `${boardArray[8]}`;
   
-  newGameBtn.addEventListener('click', () => {
+  const gameBoardReset = (gameBoard) => {
     boardArray = ['','','','','','','','','',];
     box1.textContent = `${boardArray[0]}`;
     box2.textContent = `${boardArray[1]}`;
@@ -34,7 +35,8 @@ const gameBoard = () => {
     box7.textContent = `${boardArray[6]}`;
     box8.textContent = `${boardArray[7]}`;
     box9.textContent = `${boardArray[8]}`;
-  });
+  };
+  newGameBtn.addEventListener('click', gameBoardReset);
 
 };
 gameBoard();
@@ -133,9 +135,52 @@ const playerSelection = (player) => {
       box9.textContent = `${boardArray[8]}`;
     };
   });
-    
 };  
-playerSelection(playerX);
+
+function checkWin() {
+  if ((boardArray[0] === ['O']) && 
+  (boardArray[1] === ['O']) &&
+  (boardArray[2] === ['O'])) {
+    winMessage.textContent = ('Player O Wins!');
+  } else if ((boardArray[0] === ['O']) && 
+  (boardArray[3] === ['O']) &&
+  (boardArray[6] === ['O'])) {
+    winMessage.textContent = ('Player O Wins!');
+  } else if ((boardArray[0] === ['O']) && 
+  (boardArray[4] === ['O']) &&
+  (boardArray[8] === ['O'])) {
+    winMessage.textContent = ('Player O Wins!');
+  } else if ((boardArray[2] === ['O']) && 
+  (boardArray[4] === ['O']) &&
+  (boardArray[6] === ['O'])) {
+    winMessage.textContent = ('Player O Wins!');
+  } else if ((boardArray[2] === ['O']) && 
+  (boardArray[5] === ['O']) &&
+  (boardArray[8] === ['O'])) {
+    winMessage.textContent = ('Player O Wins!');
+  } else if ((boardArray[6] === ['O']) && 
+  (boardArray[7] === ['O']) &&
+  (boardArray[8] === ['O'])) {
+    winMessage.textContent = ('Player O Wins!');
+  } else {
+
+ };
+
+};
+
+
+function swapTurns() {
+	playerSelection(playerX);
+}
+
+function playRound() {
+  playerSelection(playerO);
+  winMessage.textContent = ('You Win!');
+  checkWin();
+  swapTurns();
+  console.log(boardArray);
+};
+playRound();
 
 
 
