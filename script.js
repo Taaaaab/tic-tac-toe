@@ -41,146 +41,15 @@ const gameBoard = () => {
 };
 gameBoard();
 
-const playerO = {name:'Owen', team:'teamO'};        
-const playerX = {name:'Dougie', team:'teamX'};
-
-const playerSelection = (player) => {       
-  box1.addEventListener('click', () => { 
-    if ((player.team === 'teamO') && (boardArray[0] === '')) {
-      boardArray[0] = ['O'];
-      box1.textContent = `${boardArray[0]}`;
-    };
-    if ((player.team === 'teamX') && (boardArray[0] === '')) {
-      boardArray[0] = ['X'];
-      box1.textContent = `${boardArray[0]}`;
-    };
-  });
-  box2.addEventListener('click', () => { 
-    if ((player.team === 'teamO') && (boardArray[1] === '')) {
-      boardArray[1] = ['O'];
-      box2.textContent = `${boardArray[1]}`;
-    };
-    if ((player.team === 'teamX') && (boardArray[1] === '')) {
-      boardArray[1] = ['X'];
-      box2.textContent = `${boardArray[1]}`;
-    };
-  });
-  box3.addEventListener('click', () => { 
-    if ((player.team === 'teamO') && (boardArray[2] === '')) {
-      boardArray[2] = ['O'];
-      box3.textContent = `${boardArray[2]}`;
-    };
-    if ((player.team === 'teamX') && (boardArray[2] === '')) {
-      boardArray[2] = ['X'];
-      box3.textContent = `${boardArray[2]}`;
-    };
-  });
-  box4.addEventListener('click', () => { 
-    if ((player.team === 'teamO') && (boardArray[3] === '')) {
-      boardArray[3] = ['O'];
-      box4.textContent = `${boardArray[3]}`;
-    };
-    if ((player.team === 'teamX') && (boardArray[3] === '')) {
-      boardArray[3] = ['X'];
-      box4.textContent = `${boardArray[3]}`;
-    };
-  });
-  box5.addEventListener('click', () => { 
-    if ((player.team === 'teamO') && (boardArray[4] === '')) {
-      boardArray[4] = ['O'];
-      box5.textContent = `${boardArray[4]}`;
-    };
-    if ((player.team === 'teamX') && (boardArray[4] === '')) {
-      boardArray[4] = ['X'];
-      box5.textContent = `${boardArray[4]}`;
-    };
-  });
-  box6.addEventListener('click', () => { 
-    if ((player.team === 'teamO') && (boardArray[5] === '')) {
-      boardArray[5] = ['O'];
-      box6.textContent = `${boardArray[5]}`;
-    };
-    if ((player.team === 'teamX') && (boardArray[5] === '')) {
-      boardArray[5] = ['X'];
-      box6.textContent = `${boardArray[5]}`;
-    };
-  });
-  box7.addEventListener('click', () => { 
-    if ((player.team === 'teamO') && (boardArray[6] === '')) {
-      boardArray[6] = ['O'];
-      box7.textContent = `${boardArray[6]}`;
-    };
-    if ((player.team === 'teamX') && (boardArray[6] === '')) {
-      boardArray[6] = ['X'];
-      box7.textContent = `${boardArray[6]}`;
-    };
-  });
-  box8.addEventListener('click', () => { 
-    if ((player.team === 'teamO') && (boardArray[7] === '')) {
-      boardArray[7] = ['O'];
-      box8.textContent = `${boardArray[7]}`;
-    };
-    if ((player.team === 'teamX') && (boardArray[7] === '')) {
-      boardArray[7] = ['X'];
-      box8.textContent = `${boardArray[7]}`;
-    };
-  });
-  box9.addEventListener('click', () => { 
-    if ((player.team === 'teamO') && (boardArray[8] === '')) {
-      boardArray[8] = ['O'];
-      box9.textContent = `${boardArray[8]}`;
-    };
-    if ((player.team === 'teamX') && (boardArray[8] === '')) {
-      boardArray[8] = ['X'];
-      box9.textContent = `${boardArray[8]}`;
-    };
-  });
-};  
-
-function checkWin() {
-  if ((boardArray[0] === ['O']) && 
-  (boardArray[1] === ['O']) &&
-  (boardArray[2] === ['O'])) {
-    winMessage.textContent = ('Player O Wins!');
-  } else if ((boardArray[0] === ['O']) && 
-  (boardArray[3] === ['O']) &&
-  (boardArray[6] === ['O'])) {
-    winMessage.textContent = ('Player O Wins!');
-  } else if ((boardArray[0] === ['O']) && 
-  (boardArray[4] === ['O']) &&
-  (boardArray[8] === ['O'])) {
-    winMessage.textContent = ('Player O Wins!');
-  } else if ((boardArray[2] === ['O']) && 
-  (boardArray[4] === ['O']) &&
-  (boardArray[6] === ['O'])) {
-    winMessage.textContent = ('Player O Wins!');
-  } else if ((boardArray[2] === ['O']) && 
-  (boardArray[5] === ['O']) &&
-  (boardArray[8] === ['O'])) {
-    winMessage.textContent = ('Player O Wins!');
-  } else if ((boardArray[6] === ['O']) && 
-  (boardArray[7] === ['O']) &&
-  (boardArray[8] === ['O'])) {
-    winMessage.textContent = ('Player O Wins!');
-  } else {
-
- };
-
+const player = (name, team) => {
+  return {name, team};
 };
 
+const player1 = player('Dougie', 'teamX');
+const player2 = player('Mr. B', 'teamO');
 
-function swapTurns() {
-	playerSelection(playerX);
-}
+const gamePlay = () => {
 
-function playRound() {
-  playerSelection(playerO);
-  winMessage.textContent = ('You Win!');
-  checkWin();
-  swapTurns();
-  console.log(boardArray);
 };
-playRound();
-
 
 
