@@ -1,43 +1,10 @@
 const container = document.querySelector('#container');
 const gridContainer = document.querySelector('#gridContainer');
-const box1 = document.querySelector('#box1');
-const box2 = document.querySelector('#box2');
-const box3 = document.querySelector('#box3');
-const box4 = document.querySelector('#box4');
-const box5 = document.querySelector('#box5');
-const box6 = document.querySelector('#box6');
-const box7 = document.querySelector('#box7');
-const box8 = document.querySelector('#box8');
-const box9 = document.querySelector('#box9');
-const winMessage = document.querySelector('#winMessage');
+const displayMessage = document.querySelector('#displayMessage');
 const newGameBtn = document.querySelector('#newGameBtn');
 let boardArray = ['','','','','','','','',''];
 
 const gameBoard = () => {  
-      box1.textContent = `${boardArray[0]}`;
-      box2.textContent = `${boardArray[1]}`;
-      box3.textContent = `${boardArray[2]}`;
-      box4.textContent = `${boardArray[3]}`;
-      box5.textContent = `${boardArray[4]}`;
-      box6.textContent = `${boardArray[5]}`;
-      box7.textContent = `${boardArray[6]}`;
-      box8.textContent = `${boardArray[7]}`;
-      box9.textContent = `${boardArray[8]}`;
-  
-  const gameBoardReset = (gameBoard) => {
-    boardArray = ['','','','','','','','','',];
-    box1.textContent = `${boardArray[0]}`;
-    box2.textContent = `${boardArray[1]}`;
-    box3.textContent = `${boardArray[2]}`;
-    box4.textContent = `${boardArray[3]}`;
-    box5.textContent = `${boardArray[4]}`;
-    box6.textContent = `${boardArray[5]}`;
-    box7.textContent = `${boardArray[6]}`;
-    box8.textContent = `${boardArray[7]}`;
-    box9.textContent = `${boardArray[8]}`;
-  };
-  newGameBtn.addEventListener('click', gameBoardReset);
-
 };
 gameBoard();
 
@@ -48,8 +15,38 @@ const player = (name, team) => {
 const player1 = player('Dougie', 'teamX');
 const player2 = player('Mr. B', 'teamO');
 
-const gamePlay = () => {
+let gameActive = true;
+let currentPlayer = 'X';
+const winningMessage = () => `Player ${currentPlayer} wins!`;
+const drawMessage = () => `Game ended in a draw!`;
+const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+displayMessage.innerHTML = currentPlayerTurn();
+
+function handleCellPlayed(clickedCell, clickedCellIndex) {
 
 };
+function handlePlayerChange() {
+
+};
+function handleResultValidation() {
+
+};
+function handleCellClick(clickedCellEvent) {
+  const clickedCell = clickedCellEvent.target;
+
+  const clickedCellIndex = parseInt(
+    clickedCell.getAttribute('data-cell-index')
+  );
+ 
+  if (gameState[clickedCellIndex] !== "" || !gameActive) {
+    return;
+  };
+
+  handleCellPlayed(clickedCell, clickedCellIndex);
+  handleResultValidation();
+
+};
+
+document.querySelectorAll('.grid-item').forEach(cell => cell.addEventListener('click', handleCellClick));
 
 
