@@ -11,14 +11,18 @@ const player2 = player("Mr. B", "teamO");
 const winningMessage = () => `Player ${currentPlayer} wins!`;
 const drawMessage = () => `Game ended in a draw!`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
-displayMessage.innerHTML = currentPlayerTurn();
+if ((displayMessage === null || displayMessage === void 0 ? void 0 : displayMessage.innerHTML) != null) {
+    displayMessage.innerHTML = currentPlayerTurn();
+}
 function handleCellPlayed(clickedCell, clickedCellIndex) {
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
 }
 function handlePlayerChange() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
-    displayMessage.innerHTML = currentPlayerTurn();
+    if (displayMessage === null || displayMessage === void 0 ? void 0 : displayMessage.innerHTML) {
+        displayMessage.innerHTML = currentPlayerTurn();
+    }
 }
 const winningConditions = [
     [0, 1, 2],
@@ -46,12 +50,14 @@ function handleResultValidation() {
         }
     }
     if (roundWon) {
-        displayMessage.innerHTML = winningMessage();
+        if (displayMessage === null || displayMessage === void 0 ? void 0 : displayMessage.innerHTML) {
+            displayMessage.innerHTML = winningMessage();
+        }
         gameActive = false;
         return;
     }
     let roundDraw = !gameState.includes("");
-    if (roundDraw) {
+    if (roundDraw && (displayMessage === null || displayMessage === void 0 ? void 0 : displayMessage.innerHTML)) {
         displayMessage.innerHTML = drawMessage();
         gameActive = false;
         return;
@@ -71,11 +77,15 @@ function handleRestartGame() {
     gameActive = true;
     currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
-    displayMessage.innerHTML = currentPlayerTurn();
+    if (displayMessage === null || displayMessage === void 0 ? void 0 : displayMessage.innerHTML) {
+        displayMessage.innerHTML = currentPlayerTurn();
+    }
     document.querySelectorAll(".cell").forEach((cell) => (cell.innerHTML = ""));
 }
 const cell = document
     .querySelectorAll(".cell")
     .forEach((cell) => cell.addEventListener("click", handleCellClick));
 const newGameBtn = document.querySelector("#newGameBtn");
-newGameBtn.addEventListener("click", handleRestartGame);
+if (newGameBtn != null) {
+    newGameBtn.addEventListener("click", handleRestartGame);
+}
